@@ -53,11 +53,11 @@
         color: #C5C6C7;
     }
      a:link {
-        color: #C3073F; 
+        color: #1e5bdf; 
         background-color: transparent;
     }
     a:visited {
-        color: #C3073F;
+        color: #1e5bdf;
         background-color: transparent;
     }
 </style>
@@ -93,7 +93,7 @@
         )
     }
 </script>
-<title>391 Operating Sysem Demo</title>
+<title>jOS Demo</title>
 <h2>The Operating System: </h2>
 <hr>
 <div id="screen_container">
@@ -101,35 +101,26 @@
     <canvas id="emu_screen"></canvas>
     <p id="hint_text">
         <i>CLICK ON EMULATOR SCREEN BEFORE BOOT TO LOAD KB AND MOUSE.</i><br>
-        <b>Use the mouse to click on appications, and press ESC to exit!<br>
-        <i>Counter and Hello require input from user before exiting.</i><br>
-        In terminal, use Tab to autocomplete files & commands, press Alt+F1/F2/F3 to switch terminal,<br>
-        and press Ctrl+L to Clear Screen, ESC to exit back to GUI.</br>
-        Please look at the <a href="./overview.html" target="_blank">Technical Overview</a> page for more information.<br>
+        <b>Use the mouse to click on appications, and press ESC or CTRL+C to exit!<br>
+        In terminal press Alt+F1/F2/F3 to switch terminal<br>
+        and press Ctrl+L to Clear Screen.</br>
+        Please look at the <a href="./overview.html" target="_blank">Technical Writeup</a> page for more information.<br>
     </p>
     <p id="popup_text">
         <b><a href="JavaScript:popUp();">Open in a Popup Window</a></b>
     </p>
 </div>
-<div id="known_issue">
-    <h3>Known Issues</h3>
-    <p>
-        <i>The emulator used to run OS on the website has a few bugs:<br>
-         Use Firefox or Google Chrome to run. (Works on Safari, but with weird results)<br>
-         Right click in paint will not work properly on laptop trackpad<br>
-         &emsp;(I think b/c the trackpad hardware never sets right click bit to from 1 back to 0 once clicked.)</i>
-    </p>
-</div>
 <h3>Overview</h3>
 <p>
-    <b>Our Operating System is a x86 multitask OS built from scratch.</b> It features:<br>
+    <b>jOS is a x86 multitask OS built from scratch.</b> It features:<br>
     <ul>
         <li>A custom file system.</li>
-        <li>GDT, IDT, with custom Blue Screens on exceptions (try sigtest 0).</li>
+        <li>GDT, IDT, with custom exception handling (try sigtest 0).</li>
         <li>Mouse, KB, PIT, and a Virtual RTC all having custom drivers with PIC initialization.</li>
         <li>System Calls invoked through register arguments and int $0x80.</li>
         <li>Up to six user applications running in three terminals with Round-Robin Scheduler.</li>
         <li>Virtual Memory supporting both 4kb and 4MB pages.</li>
+        <li>And much more! See the writeup for more details.</li>
     </ul>
 </p>
 <hr>
